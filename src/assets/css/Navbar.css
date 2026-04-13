@@ -1,0 +1,130 @@
+/* ---------- CSS Variables ---------- */
+:root {
+  --color-black:  #111111;
+  --color-dark:   #161211;
+  --color-orange: #E86129;
+  --color-light:  #E4E4E7;
+}
+
+.bp-nav {
+  background-color: var(--color-black);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 1002;
+}
+
+.bp-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.bp-logo-icon {
+  background: #E8500A;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.bp-logo-icon:hover {
+  transform: scale(1.05);
+}
+
+.bp-brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.bp-brand span {
+  color: #E8500A;
+}
+
+.bp-link {
+  color: #cccccc !important;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bp-link:hover {
+  color: #ffffff !important;
+}
+
+.btn-signin {
+  color: white;
+  background: transparent;
+  border: none;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-signin:hover {
+  color: #E8500A;
+}
+
+.btn-startfree {
+  background: #E8500A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-startfree:hover {
+  background: #cf4509;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 80, 10, 0.3);
+}
+
+.btn-startfree:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+/* Desktop hover effects */
+@media (min-width: 992px) {
+  .bp-link {
+    position: relative;
+  }
+  
+  .bp-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #E8500A;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .bp-link:hover::after {
+    width: 80%;
+  }
+}
