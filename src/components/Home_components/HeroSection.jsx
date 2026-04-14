@@ -3,18 +3,18 @@ import '../../assets/css/Home.css';
 import '../../assets/css/Style.css';
 
 const feedItems = [
-  { badge: 'WIN RATE',   badgeColor: '#22c55e', time: '12s ago', title: 'Radial — $8.2M Electrical',             sub: 'Pctric · Phoenix, AZ',                  stat: '+5.1% vs last month' },
-  { badge: 'BID SENT',   badgeColor: '#6366f1', time: '38s ago', title: 'Skyline Tower Phase II — $28.7M',       sub: 'Apex HVAC · Miami, FL' },
-  { badge: 'NEW MATCH',  badgeColor: '#f59e0b', time: '45s ago', title: 'NovaTech Manufacturing — $67M',         sub: 'AI Score: 87% match · Phoenix, AZ' },
-  { badge: 'ESTIMATING', badgeColor: '#8b5cf6', time: '1m ago',  title: 'Lincoln Elementary — Takeoff 73% done', sub: 'Patterson Building · Denver, CO' },
-  { badge: 'ADDENDUM',   badgeColor: '#ec4899', time: '2m ago',  title: 'Mercy Hospital — Addendum #3 posted',   sub: 'Scope change: MEP updates · Chicago, IL' },
+  { badge: 'WIN RATE', badgeColor: '#22c55e', time: '12s ago', title: 'Radial — $8.2M Electrical', sub: 'Pctric · Phoenix, AZ', stat: '+5.1% vs last month' },
+  { badge: 'BID SENT', badgeColor: '#6366f1', time: '38s ago', title: 'Skyline Tower Phase II — $28.7M', sub: 'Apex HVAC · Miami, FL' },
+  { badge: 'NEW MATCH', badgeColor: '#f59e0b', time: '45s ago', title: 'NovaTech Manufacturing — $67M', sub: 'AI Score: 87% match · Phoenix, AZ' },
+  { badge: 'ESTIMATING', badgeColor: '#8b5cf6', time: '1m ago', title: 'Lincoln Elementary — Takeoff 73% done', sub: 'Patterson Building · Denver, CO' },
+  { badge: 'ADDENDUM', badgeColor: '#ec4899', time: '2m ago', title: 'Mercy Hospital — Addendum #3 posted', sub: 'Scope change: MEP updates · Chicago, IL' },
 ];
 
 const pipelineStats = [
-  { num: '247', label: 'LEADS',       color: '#fff' },
-  { num: '89',  label: 'BIDS',        color: '#fff' },
-  { num: '34',  label: 'SHORTLISTED', color: '#E86129' },
-  { num: '31',  label: 'WON ✓',       color: '#22c55e' },
+  { num: '247', label: 'LEADS', color: '#fff' },
+  { num: '89', label: 'BIDS', color: '#fff' },
+  { num: '34', label: 'SHORTLISTED', color: '#E86129' },
+  { num: '31', label: 'WON ✓', color: '#22c55e' },
 ];
 
 const avatarColors = ['#555', '#666', '#777', '#888'];

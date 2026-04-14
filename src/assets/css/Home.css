@@ -67,7 +67,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22c55e;
+  background: #E86129;
 }
 
 .hero-live-tag {
@@ -210,19 +210,50 @@ body {
 }
 
 .hero-soc-green {
-  color: #22c55e;
+  color: var(--color-orange);
   font-weight: 700;
 }
 
 /* ============================================
    FEED CARD COMPONENT
    ============================================ */
-
 .feed-card {
+  position: relative;
   background: var(--color-dark);
   border: 1px solid #2a2a2a;
   border-radius: 16px;
   overflow: hidden;
+}
+
+/* glowing animated layer */
+.feed-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(232, 97, 41, 0.6) 0%, transparent 40%);
+  animation: glowMove 6s linear infinite;
+  pointer-events: none;
+}
+
+/* animation */
+@keyframes glowMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(20%, 20%) scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
 }
 
 .feed-card-header {
@@ -235,7 +266,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22c55e;
+  background: #E86129;
 }
 
 .feed-card-title {
@@ -301,7 +332,7 @@ body {
 
 .feed-stat {
   font-size: 11px;
-  color: #22c55e;
+  color: #E86129;
   margin-top: 2px;
 }
 
@@ -391,8 +422,15 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
 .header-actions {
@@ -484,6 +522,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -566,10 +605,12 @@ body {
     border-color: #3d3d42;
     box-shadow: 0 0 5px rgba(207, 69, 37, 0.2);
   }
+
   50% {
     border-color: #CF4525;
     box-shadow: 0 0 15px rgba(207, 69, 37, 0.4);
   }
+
   100% {
     border-color: #3d3d42;
     box-shadow: 0 0 5px rgba(207, 69, 37, 0.2);
@@ -1043,9 +1084,17 @@ ul.platform-features li {
 }
 
 @keyframes floatUpDown {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* ============================================
@@ -1385,15 +1434,15 @@ button.outline:hover {
   .hero-heading {
     font-size: 48px;
   }
-  
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .whychoose-section {
     padding: 60px 0;
   }
@@ -1404,9 +1453,9 @@ button.outline:hover {
   .hero-heading {
     font-size: 36px;
   }
-  
 
-  
+
+
   .feature-card {
     padding: 30px 20px;
   }
@@ -1417,7 +1466,7 @@ button.outline:hover {
   .main-layout {
     flex-direction: column;
   }
-  
+
   .vertical-tabs {
     width: 100%;
     display: flex;
@@ -1425,17 +1474,17 @@ button.outline:hover {
     gap: 8px;
     position: static;
   }
-  
+
   .vertical-tab-btn {
     width: auto;
     flex: 1;
     justify-content: center;
   }
-  
+
   .analytics-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .analytics-card.full-width {
     grid-column: span 1;
   }
@@ -1446,43 +1495,43 @@ button.outline:hover {
   .dashboard_content {
     padding: 20px !important;
   }
-  
+
   .dashboard {
     padding: 60px 10px;
   }
-  
+
   .stats-grid,
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .estimate-item {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .estimate-progress {
     width: 100%;
   }
-  
+
   .metrics-row {
     flex-direction: column;
     gap: 16px;
   }
-  
+
   .vertical-tabs {
     overflow-x: auto;
     flex-wrap: nowrap;
   }
-  
+
   .container {
     padding: 0 16px;
   }
-  
+
   .whychoose-card {
     padding: 20px;
   }
-  
+
   .whychoose-card h3 {
     font-size: 26px;
   }
@@ -1513,11 +1562,9 @@ button.outline:hover {
   position: absolute;
   width: 500px;
   height: 300px;
-  background: radial-gradient(
-    ellipse,
-    rgba(232, 118, 58, 0.25) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse,
+      rgba(232, 118, 58, 0.25) 0%,
+      transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
