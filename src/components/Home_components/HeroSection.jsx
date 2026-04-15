@@ -13,8 +13,8 @@ const feedItems = [
 const pipelineStats = [
   { num: '247', label: 'LEADS', color: '#fff' },
   { num: '89', label: 'BIDS', color: '#fff' },
-  { num: '34', label: 'SHORTLISTED', color: '#E86129' },
-  { num: '31', label: 'WON ✓', color: '#22c55e' },
+  { num: '34', label: 'SHORTLISTED', color: '#ffffff' },
+  { num: '31', label: 'WON ✓', color: '#ffffff' },
 ];
 
 const avatarColors = ['#555', '#666', '#777', '#888'];

@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Reviews', path: '/reviews' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: 'Contact Us', path: '/Contact-Us' },
   ];
 
   // Prevent body scroll when mobile menu is open
@@ -22,7 +22,7 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -37,12 +37,12 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg bp-nav">
         <div className="bp-container d-flex align-items-center justify-content-between w-100">
-          
+
           {/* Logo */}
           <Link to="/" className="navbar-brand d-flex align-items-center gap-2" onClick={handleLinkClick}>
             <div className="bp-logo-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+                <path d="M3 9.5L12 3l9 6.5V21H3V9.5z" />
               </svg>
             </div>
             <span className="bp-brand"><span>Build</span>Pulse</span>
@@ -65,7 +65,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Overlay */}
           {isOpen && (
-            <div 
+            <div
               className="mobile-menu-overlay"
               onClick={() => setIsOpen(false)}
               style={{
@@ -86,8 +86,8 @@ const Navbar = () => {
             <ul className="navbar-nav mx-auto">
               {menuItems.map(item => (
                 <li className="nav-item" key={item.name}>
-                  <Link 
-                    to={item.path} 
+                  <Link
+                    to={item.path}
                     className="nav-link bp-link"
                     onClick={handleLinkClick}
                   >
@@ -99,7 +99,13 @@ const Navbar = () => {
 
             {/* Buttons */}
             <div className="mobile-buttons">
-              <button className="btn-signin">Sign In</button>
+              <a
+                href="https://bidconnectors.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-signin"
+              >
+                <button className="btn-signin">Sign In</button></a>
               <button className="btn-startfree">Start Free</button>
             </div>
           </div>
