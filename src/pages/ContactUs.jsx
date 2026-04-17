@@ -23,7 +23,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     setTimeout(() => {
       setSubmitted(true);
       setLoading(false);
@@ -35,7 +35,7 @@ const ContactUs = () => {
   return (
     <>
 
-      
+
       <style>{`
         
         * {
@@ -46,7 +46,7 @@ const ContactUs = () => {
         
         .contact-page {
           font-family: 'Inter', sans-serif;
-          background: #F9FAFB;
+          background: #111111;
         }
         
         .container {
@@ -100,12 +100,12 @@ const ContactUs = () => {
         }
         
         .contact-card {
-          background: white;
-          padding: 32px 24px;
-          border-radius: 16px;
-          text-align: center;
-          transition: all 0.3s ease;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    background: #050505;
+    padding: 32px 24px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 35px 0px rgba(207, 69, 37, 0.3);
         }
         
         .contact-card:hover {
@@ -123,13 +123,13 @@ const ContactUs = () => {
         .contact-card h3 {
           font-size: 20px;
           font-weight: 700;
-          color: #111111;
+          color: #fff;
           margin-bottom: 12px;
         }
         
         .contact-card p {
           font-size: 14px;
-          color: #6B7280;
+          color: #fff;
           line-height: 1.6;
         }
         
@@ -142,7 +142,7 @@ const ContactUs = () => {
         
         /* Form */
         .form-wrapper {
-          background: white;
+          background: #050505;
           padding: 40px;
           border-radius: 16px;
           box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
@@ -151,12 +151,12 @@ const ContactUs = () => {
         .form-wrapper h2 {
           font-size: 28px;
           font-weight: 700;
-          color: #111111;
+          color: #ffffff;
           margin-bottom: 8px;
         }
         
         .form-wrapper p {
-          color: #6B7280;
+          color: #ffffff;
           margin-bottom: 32px;
         }
         
@@ -166,15 +166,21 @@ const ContactUs = () => {
         
         .form-group input,
         .form-group textarea {
-          width: 100%;
-          padding: 14px 16px;
-          border: 1px solid #E5E7EB;
-          border-radius: 12px;
-          font-size: 14px;
-          font-family: 'Inter', sans-serif;
-          transition: all 0.3s ease;
+    width: 100%;
+    padding: 14px 16px;
+    border-bottom: 1px solid #E5E7EB;
+    border-radius: 0;
+    background: transparent;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
         }
-        
+                .form-group input,
+        .form-group textarea ::placeholder{
+        color:#ffffff;        }
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
@@ -284,7 +290,7 @@ const ContactUs = () => {
           .form-wrapper { padding: 24px; }
         }
       `}</style>
-      
+
       <div className="contact-page">
         {/* Banner */}
         <div className="banner">
@@ -293,7 +299,7 @@ const ContactUs = () => {
             <p>Get in touch with our team. We're here to help you with your construction projects.</p>
           </div>
         </div>
-        
+
         {/* Contact Section */}
         <div className="contact-section">
           <div className="container">
@@ -304,27 +310,27 @@ const ContactUs = () => {
                 <h3>Phone</h3>
                 <p>+1 (555) 123-4567<br />+1 (555) 987-6543</p>
               </div>
-              
+
               <div className="contact-card">
                 <i className="bi bi-envelope-fill"></i>
                 <h3>Email</h3>
                 <p>hello@buildpulse.com<br />support@buildpulse.com</p>
               </div>
-              
+
               <div className="contact-card">
                 <i className="bi bi-geo-alt-fill"></i>
                 <h3>Address</h3>
                 <p>123 Construction Avenue<br />New York, NY 10001</p>
               </div>
             </div>
-            
+
             {/* Form + Map */}
             <div className="contact-grid">
               {/* Form */}
               <div className="form-wrapper">
                 <h2>Send a Message</h2>
                 <p>Fill out the form and we'll get back to you within 24 hours.</p>
-                
+
                 {submitted ? (
                   <div className="success-message">
                     <i className="bi bi-check-circle-fill"></i>
@@ -343,7 +349,7 @@ const ContactUs = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="form-group">
                       <input
                         type="email"
@@ -354,7 +360,7 @@ const ContactUs = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="form-group">
                       <input
                         type="tel"
@@ -364,7 +370,7 @@ const ContactUs = () => {
                         placeholder="Phone Number"
                       />
                     </div>
-                    
+
                     <div className="form-group">
                       <textarea
                         name="message"
@@ -374,7 +380,7 @@ const ContactUs = () => {
                         required
                       />
                     </div>
-                    
+
                     <button type="submit" className="submit-btn" disabled={loading}>
                       {loading ? (
                         <>
@@ -391,7 +397,7 @@ const ContactUs = () => {
                   </form>
                 )}
               </div>
-              
+
               {/* Map */}
               <div className="map-wrapper">
                 <iframe
