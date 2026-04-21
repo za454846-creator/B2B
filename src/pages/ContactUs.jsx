@@ -46,7 +46,7 @@ const ContactUs = () => {
         
         .contact-page {
           font-family: 'Inter', sans-serif;
-          background: #111111;
+          background: #505050;
         }
         
         .container {
@@ -83,6 +83,7 @@ const ContactUs = () => {
         /* Contact Section */
         .contact-section {
           padding: 80px 0;
+          background: #050505;
         }
         
         .contact-grid {
@@ -100,7 +101,7 @@ const ContactUs = () => {
         }
         
         .contact-card {
-    background: #050505;
+    background: #1A1917;
     padding: 32px 24px;
     border-radius: 16px;
     text-align: center;
@@ -142,7 +143,7 @@ const ContactUs = () => {
         
         /* Form */
         .form-wrapper {
-          background: #050505;
+          background: #1A1917;
           padding: 40px;
           border-radius: 16px;
           box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
