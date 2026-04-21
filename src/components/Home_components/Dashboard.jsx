@@ -44,16 +44,16 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="container dashboard_content">
-        <header className="dashboard_nav">
+        <div className="dashboard_nav">
           <div className="project_finder">
-            <h1 className="project_heading">ProjectFinder</h1>
+            <h2 className="project_heading">ProjectFinder</h2>
             <span className="live-badge">LIVE</span>
           </div>
-          <div className="header-actions">
+          <div className="dashboard-actions">
             <button className="icon-btn">🔔</button>
             <button className="icon-btn">👤</button>
           </div>
-        </header>
+        </div>
 
         <div className="main-layout">
           {/* Vertical Tabs Sidebar */}

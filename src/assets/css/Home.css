@@ -342,7 +342,7 @@ body {
   }
 }
 
-.header-actions {
+.dashboard-actions {
   display: flex;
   gap: 12px;
 }

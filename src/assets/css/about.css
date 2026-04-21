@@ -1,131 +1,390 @@
-.about-banner {
-    padding: 120px 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(249, 115, 22, 0.12) 0%, transparent 60%);
-    position: relative;
-    overflow: hidden;
+/* ================= GLOBAL ================= */
+:root {
+  --orange: #f97316;
+  --light: #cfcfcf;
+  --dark: #0d0d0d;
+  --card-bg: #1a1917;
 }
 
-/* Optional glow effect */
+/* ================= BANNER ================= */
+.about-banner {
+  padding: 120px 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
 .about-banner::before {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: rgba(249, 115, 22, 0.2);
-    filter: blur(120px);
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(249,115,22,0.2);
+  filter: blur(120px);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
 .banner-content {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
 }
 
+.banner-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
 
 .banner-content h1 span {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 .banner-content p {
-    font-size: 18px;
-    color: var(--light);
-    margin-bottom: 30px;
-    line-height: 1.6;
+  font-size: 18px;
+  color: var(--light);
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-/* Button styling */
+/* Button */
 .banner-btn {
-    background: var(--orange);
-    border: none;
-    font-weight: 700;
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all 0.3s ease;
+  background: var(--orange);
+  border: none;
+  font-weight: 600;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Hover effect */
 .banner-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(249,115,22,0.4);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .banner-content h1 {
-        font-size: 32px;
-    }
-
-    .banner-content p {
-        font-size: 16px;
-    }
-
-    .about-banner {
-        padding: 80px 20px;
-    }
-}
- /* our story section_start */
+/* ================= OUR STORY ================= */
 .our-story-sec {
-    padding: 80px 0 0 0;
-}
-.left_content p {
-    color: var(--light);
- }
- .right_col img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 35px 0px rgba(207, 69, 37, 0.3);
- }
-.stats-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #0d0d0dab;
-    padding: 10px 20px;
-    border-radius: 16px;
-    border: 1px solid #2a2a2a;
-    max-width: 900px;
-    position: relative;
-    top: -120px;
-    margin-left: 20px;
-    margin-right: 20px;
+  padding: 100px 0;
 }
 
-/* Each box */
+.left_content h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.left_content p {
+  color: var(--light);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Image */
+.right_col {
+  position: relative;
+}
+
+.right_col img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(249,115,22,0.2);
+}
+
+/* Stats Box */
+.stats-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13,13,13,0.9);
+  padding: 15px 20px;
+  border-radius: 16px;
+  border: 1px solid #2a2a2a;
+  position: relative;
+  margin-top: -60px;
+}
+
 .stat-box {
-    text-align: center;
-    flex: 1;
+  text-align: center;
+  flex: 1;
 }
 
 .stat-box p {
-    font-size: 12px;
-    color: #aaa;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
 }
 
 .stat-box h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
 }
 
-/* Orange highlight */
 .highlight {
-    color: #f97316;
+  color: var(--orange);
 }
 
-/* Divider line */
+/* Divider */
 .divider {
-    width: 1px;
-    height: 40px;
-    background: #333;
+  width: 1px;
+  height: 40px;
+  background: #333;
+}
+
+/* ================= MISSION / VISION ================= */
+.mission-vision-section {
+  background: var(--dark);
+  padding: 100px 0;
+}
+
+.mission-vision-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.mission-vision-title {
+  color: #fff;
+  font-size: 32px;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* Cards */
+.mission-vision-card {
+  background: var(--card-bg);
+  border: 1px solid #2a2825;
+  border-radius: 16px;
+  padding: 30px;
+  transition: 0.3s;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+}
+
+/* Icon */
+.mission-vision-icon-wrap {
+  width: 55px;
+  height: 55px;
+  background: #2a1e14;
+  border: 1px solid #3d2410;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.mission-vision-card h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.mission-vision-card p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .banner-content h1 {
+    font-size: 38px;
+  }
+
+  .left_content h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-banner {
+    padding: 80px 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 30px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+
+  .our-story-sec {
+    padding: 60px 0;
+  }
+
+  .stats-wrapper {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-vision-section {
+    padding: 60px 0;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .banner-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mission-vision-card {
+    padding: 20px;
+  }
+}
+section.core-values-section{
+  padding: 100px 0;
+}
+.value-card{
+  background: var(--card-bg);
+  border: 1px solid #2a2825;
+  border-radius: 16px;
+  padding: 30px;
+  transition: 0.3s;
+}
+.value-icon{
+  width: 55px;
+  height: 55px;
+  background: #2a1e14;
+  border: 1px solid #3d2410;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.team-section {
+  padding: 80px 20px;
+  background: var(--dark);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 34px;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.team-card {
+  background: var(--card-bg);
+  border: 1px solid #2a2825;
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.team-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--orange);
+  box-shadow: 0 12px 25px rgba(249, 115, 22, 0.15);
+}
+
+/* Image */
+.team-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+/* image hover zoom */
+.team-card:hover .team-img {
+  transform: scale(1.08);
+  border-color: var(--orange);
+}
+
+/* Name */
+.team-card h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* Role */
+.role {
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons i {
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* hover icons */
+.social-icons i:hover {
+  color: var(--orange);
+  transform: scale(1.2);
 }
