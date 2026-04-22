@@ -1,6 +1,7 @@
 import React from "react";
 import StatsSection from "../components/Home_components/StatsSection";
 import Testimonials from "../components/Home_components/Testimonials";
+import CTASection from  '../components/Home_components/CTASection';
 import "../assets/css/about.css";
 import "../assets/css/Style.css";
 import storyImg from "../assets/Images/about_pageimage.jpg";
@@ -110,7 +111,7 @@ function About() {
               <div className="mission-vision-icon-wrap">
                 <i className="bi bi-bullseye"></i>
               </div>
-              <h4>Our Mission</h4>
+              <h3>Our Mission</h3>
               <p>To empower businesses with digital products that perform and drive real growth.</p>
             </div>
 
@@ -119,7 +120,7 @@ function About() {
               <div className="mission-vision-icon-wrap">
                 <i className="bi bi-eye"></i>
               </div>
-              <h4>Our Vision</h4>
+              <h3>Our Vision</h3>
               <p>A world where every digital product delivers measurable business results.</p>
             </div>
 
@@ -146,7 +147,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-graph-up-arrow"></i></div>
-                <h4>Results Over Vanity</h4>
+                <h3>Results Over Vanity</h3>
                 <p>We focus on conversion, retention and real business growth.</p>
               </div>
             </div>
@@ -154,7 +155,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-shield-check"></i></div>
-                <h4>Radical Transparency</h4>
+                <h3>Radical Transparency</h3>
                 <p>No hidden costs, no surprises — full clarity in every project.</p>
               </div>
             </div>
@@ -162,7 +163,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-lightbulb"></i></div>
-                <h4>Obsessive Craft</h4>
+                <h3>Obsessive Craft</h3>
                 <p>We focus on every detail like micro-interactions and performance.</p>
               </div>
             </div>
@@ -170,7 +171,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-people"></i></div>
-                <h4>Client Partnership</h4>
+                <h3>Client Partnership</h3>
                 <p>We work like an extension of your own team.</p>
               </div>
             </div>
@@ -178,7 +179,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-rocket"></i></div>
-                <h4>Ship Fast, Iterate</h4>
+                <h3>Ship Fast, Iterate</h3>
                 <p>We launch quickly and improve based on real feedback.</p>
               </div>
             </div>
@@ -186,7 +187,7 @@ function About() {
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
                 <div className="value-icon"><i className="bi bi-book"></i></div>
-                <h4>Never Stop Learning</h4>
+                <h3>Never Stop Learning</h3>
                 <p>We continuously improve through research and innovation.</p>
               </div>
             </div>
@@ -195,7 +196,37 @@ function About() {
 
         </div>
       </section>
+<section className="process-section">
+  <div className="container">
 
+    <div className="text-center">
+      <span className="about-badge">WHAT DRIVES US</span>
+      <h2 className="section-title">Our Process</h2>
+      <p className="section-desc">
+        Here's how we work with our clients to deliver exceptional results.
+      </p>
+    </div>
+
+    <div className="row process-grid">
+
+      {[ 
+        {id:1, title:"Discovery", desc:"We start by understanding your business goals and challenges."},
+        {id:2, title:"Planning", desc:"We create a roadmap tailored to your needs."},
+        {id:3, title:"Execution", desc:"We implement strategies with precision."},
+        {id:4, title:"Delivery", desc:"We ensure quality results and satisfaction."}
+      ].map((item) => (
+        <div key={item.id} className="col-lg-3 col-md-6 col-sm-12">
+          <div className="process-step">
+            <span>{item.id}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
       {/* ================= TEAM SECTION ================= */}
       <section className="team-section">
         <div className="container">
@@ -259,6 +290,7 @@ function About() {
 
       {/* ================= TESTIMONIALS SECTION ================= */}
       <Testimonials />
+        <CTASection />
     </>
   );
 }

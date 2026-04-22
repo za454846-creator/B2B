@@ -119,7 +119,7 @@ const HeroSection = () => {
             </div>
 
             <h1 className="hero-heading mb-4">
-              <span className="hero-strike">Stop Chasing.</span><br />
+              Stop Chasing.<br />
               Start <span className="hero-orange-italic">Winning</span><br />
               Projects.
             </h1>

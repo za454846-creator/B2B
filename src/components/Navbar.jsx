@@ -35,6 +35,7 @@ const Navbar = () => {
 
   return (
     <>
+    <header>
       <nav className="navbar navbar-expand-lg bp-nav">
         <div className="bp-container d-flex align-items-center justify-content-between w-100">
 
@@ -270,6 +271,7 @@ const Navbar = () => {
           border-radius: 4px;
         }
       `}</style>
+      </header>
     </>
   );
 };

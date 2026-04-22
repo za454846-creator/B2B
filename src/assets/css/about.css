@@ -208,7 +208,7 @@
   font-size: 22px;
 }
 
-.mission-vision-card h4 {
+.mission-vision-card h3 {
   color: #fff;
   margin-bottom: 10px;
 }
@@ -387,4 +387,34 @@ section.core-values-section{
 .social-icons i:hover {
   color: var(--orange);
   transform: scale(1.2);
+}
+.process-section{
+  padding: 0 0 60px 0;
+}
+.process-section h3{
+font-size: 20px;
+}
+.process-step span {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 12px 20px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+.row.process-grid {
+    position: relative;
+}
+
+.row.process-grid::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 80%;
+    top: 38%;
+    left: 10%;
+    background: var(--orange);
 }

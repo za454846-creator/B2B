@@ -72,10 +72,6 @@ body {
   letter-spacing: -1.5px;
 }
 
-.hero-strike {
-  color: #444;
-  text-decoration: line-through var(--orange) 3px;
-}
 
 .hero-orange-italic {
   color: var(--orange);
@@ -321,7 +317,7 @@ body {
 }
 
 .live-badge {
-  background: #ef4444;
+  background: var(--orange);
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
@@ -1471,9 +1467,7 @@ button.outline:hover {
   position: absolute;
   width: 500px;
   height: 300px;
-  background: radial-gradient(ellipse,
-      rgba(232, 118, 58, 0.25) 0%,
-      transparent 70%);
+background: radial-gradient(ellipse, rgba(234, 114, 39, 0.35) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
