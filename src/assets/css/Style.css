@@ -40,7 +40,7 @@ h1 {
 
 h2 {
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 800 !important;
   line-height: 1.15;
 }
 

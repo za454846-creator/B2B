@@ -46,7 +46,7 @@ const Navbar = () => {
                 <path d="M3 9.5L12 3l9 6.5V21H3V9.5z" />
               </svg>
             </div>
-            <span className="bp-brand"><span>Build</span>Pulse</span>
+            <span className="bp-brand"><span>Bid</span> Connectors</span>
           </Link>
 
           {/* Mobile Toggle Button */}

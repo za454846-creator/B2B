@@ -13,7 +13,7 @@ const Footer = () => {
 
           {/* BRAND */}
           <div className="footer-brand">
-            <img src="/logo.png" alt="BuildPulse" />
+            <img src="/logo.png" alt="Bid Connectors" />
             <p>
               BuildPulse helps contractors find, bid, and win more commercial projects with ease.
             </p>
@@ -56,7 +56,7 @@ const Footer = () => {
         {/* BOTTOM */}
         <div className="footer-bottom">
 
-          <p>© {new Date().getFullYear()} BuildPulse. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Bid Connectors. All rights reserved.</p>
 
           <div className="badges">
             <span>SOC 2</span>

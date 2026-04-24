@@ -6,10 +6,10 @@ import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Mainlayout/Footer";
-import Loader from "./components/Mainlayout/Loader"; // 👈 import loader
+import Loader from "./components/Mainlayout/Loader"; //  import loader
 
 function App() {
-  const location = useLocation(); // 👈 route change detect
+  const location = useLocation(); //  route change detect
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -17,23 +17,21 @@ function App() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500); // 👈 loader time (adjust kar sakte ho)
+    }, 500); //  loader time (adjust kar sakte ho)
 
     return () => clearTimeout(timer);
   }, [location]);
 
   return (
     <>
-      {loading && <Loader />} {/* 👈 loader show */}
+      {loading && <Loader />} {/*  loader show */}
 
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
-
       <Footer />
     </>
   );

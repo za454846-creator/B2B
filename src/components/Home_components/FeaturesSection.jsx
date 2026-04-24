@@ -41,7 +41,7 @@ const FeaturesSection = () => {
     <section className="features-wrapper py-5">
       <div className="container text-center mb-5">
         <span className="badge-features mb-3">FEATURES</span>
-        <h2 className="display-5 fw-bold text-white mt-2">
+        <h2 className=" fw-bold text-white mt-2">
           Built for How You <span className="text-orange">Actually Work</span>
         </h2>
         <p className="text-secondary mx-auto mt-3" style={{ maxWidth: '600px' }}>
