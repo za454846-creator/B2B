@@ -146,10 +146,10 @@
 }
 
 /* ================= MISSION / VISION ================= */
-.mission-vision-section {
+/* .mission-vision-section {
   background: var(--dark);
   padding: 100px 0;
-}
+} */
 
 .mission-vision-header {
   text-align: center;
@@ -303,8 +303,8 @@ section.core-values-section{
   font-size: 22px;
 }
 .team-section {
-  padding: 80px 20px;
-  background: var(--dark);
+  /* padding: 80px 20px;
+  background: var(--dark); */
   text-align: center;
 }
 

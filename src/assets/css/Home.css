@@ -40,7 +40,7 @@ body {
 ========================================= */
 
 .hero-section {
-  background: #0d0d0d;
+  /* background: #0d0d0d; */
   display: flex;
   align-items: center;
   padding: 80px 0;
@@ -233,6 +233,7 @@ body {
 .feed-title {
   font-size: 13px;
   font-weight: 500;
+  color: var(--light) !important;
 }
 
 .feed-sub {
@@ -281,12 +282,15 @@ body {
    ============================================ */
 
 .dashboard {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  /* background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); */
   padding: 60px 0;
 }
 
+
 .dashboard_content {
   box-shadow: 0 10px 35px 0px rgba(207, 69, 37, 0.3);
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+
   padding: 50px !important;
   border-radius: 20px;
 }
@@ -491,7 +495,7 @@ body {
 
 /* Stats Section Alternative */
 .stats-section {
-  background: linear-gradient(15deg, #0a0a0a 0%, #1a1a1a 100%);
+  /* background: linear-gradient(15deg, #0a0a0a 0%, #1a1a1a 100%); */
 }
 
 .simple-stat-card {
@@ -853,7 +857,7 @@ body {
    ============================================ */
 
 .features-wrapper {
-  background-color: #050505;
+  /* background-color: #050505; */
   color: #fff;
   font-family: 'Inter', sans-serif;
 }
@@ -886,14 +890,14 @@ body {
 }
 
 .feature-card:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background:var(--border);
   transform: translateY(-5px);
 }
 
 .feature-icon-box {
   width: 45px;
   height: 45px;
-  background: var(--color-dark);
+  background: var(--color-orange);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -914,7 +918,7 @@ body {
    ============================================ */
 
 section.platform-section {
-  background: #0C0C0C;
+  /* background: #0C0C0C; */
   padding: 60px 0px;
 }
 
@@ -1007,8 +1011,8 @@ ul.platform-features li {
    ============================================ */
 
 .whychoose-section {
-  background: radial-gradient(circle at top, #1a120f 0%, #0b0b0b 60%);
-  padding: 80px 0;
+  /* background: radial-gradient(circle at top, #1a120f 0%, #0b0b0b 60%); */
+  /* padding: 80px 0; */
   color: var(--color-light);
 }
 
@@ -1083,7 +1087,7 @@ ul.platform-features li {
    ============================================ */
 
 .testimonial-section {
-  background: var(--color-dark);
+  /* background: var(--color-dark); */
   padding: 80px 0;
   color: var(--color-light);
 }
@@ -1198,7 +1202,7 @@ button.accordion-button {
    ============================================ */
 
 .pricing {
-  background: var(--color-black);
+  /* background: var(--color-black); */
   padding: 60px 20px;
 }
 
@@ -1450,7 +1454,7 @@ button.outline:hover {
 }
 
 .cta-section {
-  background-color: #0e0e0e;
+  /* background-color: #0e0e0e; */
   min-height: 420px;
   display: flex;
   align-items: center;

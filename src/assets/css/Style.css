@@ -9,7 +9,7 @@
   --color-light: #E4E4E7;
 }
 
-/* ---------- Base ---------- */
+/* ---------- GLOBAL RESET ---------- */
 *,
 *::before,
 *::after {
@@ -18,12 +18,30 @@
   padding: 0;
 }
 
+/* ---------- BODY BASE ---------- */
 body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: all 0.3s ease;
 }
 
-/* ---------- Container ---------- */
+/* =========================
+   🌙 DARK MODE (DEFAULT)
+========================= */
+body.dark {
+  background-color: #0a0a0a;
+  color: #e4e4e7;
+}
+
+/* =========================
+   ☀️ LIGHT MODE
+========================= */
+body.light {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* ---------- CONTAINER ---------- */
 .container {
   max-width: 1250px !important;
   margin: 0 auto;
@@ -31,7 +49,116 @@ body {
   width: 100%;
 }
 
-/* ---------- Headings ---------- */
+/* ---------- TEXT ---------- */
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #e4e4e7;
+}
+
+body.light p,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6 {
+  color: #111;
+}
+
+/* ---------- LINKS ---------- */
+body.dark a {
+  color: #e4e4e7;
+}
+
+body.light a {
+  color: #111;
+}
+
+/* ---------- SECTIONS ---------- */
+body.dark .section {
+  background: #0a0a0a;
+}
+
+body.light .section {
+  background: #f8f8f8;
+}
+
+/* ---------- NAVBAR ---------- */
+body.dark .bp-nav {
+  background: #000;
+}
+.light .feed-title,
+.light .feed-avatar li::before,
+.light .pipeline-label,
+.light .pipeline-num,
+.light .pipeline-sub,
+.light .feed-card-title,
+.light .feed-card-time,
+.light .project-title,
+.light .project_heading,
+.light .feature-desc,
+.light .whychoose-card h3,
+.light .whychoose-card h5,
+.light .whychoose-card p,
+.light .testimonial-card p,
+.light .testimonial-card h6,
+.light .pricing_card h3,
+.light .footer-brand p,
+.light .footer-links a,
+.light .footer-links h6,
+.light .stat-box p,
+.light .stat-box h3,
+.light .mission-vision-card h3,
+.light .mission-vision-card p,
+.light .value-card h3,
+.light .value-card p,
+.light .team-section h3,
+.light .team-section p
+{
+  color: var(--light) !important;
+}
+.light .badge-features h2{
+  color: var(--color-black) !important;
+}
+.dark .btn-signin{
+  color: var(--color-light);
+}
+.light .btn-signin{
+  color: var(--color-black);
+}
+.dark ul.platform-features li{
+  color: var(--color-light);
+}
+.light ul.platform-features li{
+  color: var(--color-dark);
+}
+.light .platform-tab{
+  background: var(--color-black);
+}
+.light .simple-stat-card{
+background: var(--color-light);
+}
+.light .feed-avatar{
+background: var(--color-light);
+}
+.dark .feed-avatar{
+    background-color: #0a0a0a;
+}
+body.light .bp-nav {
+  background: #fff;
+}
+
+/* ---------- BUTTON BASE FIX ---------- */
+button {
+  transition: 0.3s ease;
+}
+
+/* ---------- HEADING BASE ---------- */
 h1 {
   font-size: 64px;
   font-weight: 900;
@@ -41,70 +168,47 @@ h1 {
 h2 {
   font-size: 36px;
   font-weight: 800 !important;
-  line-height: 1.15;
 }
 
 h3 {
   font-size: 24px;
   font-weight: 700;
-  line-height: 1.3;
 }
 
 h4 {
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.4;
 }
 
 h5 {
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.5;
 }
 
 h6 {
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.5;
 }
 
-/* ---------- Paragraph ---------- */
+/* ---------- PARAGRAPH ---------- */
 p {
   font-size: 16px;
   line-height: 24px;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 48px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
+  h1 { font-size: 48px; }
+  h2 { font-size: 30px; }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
+  h1 { font-size: 36px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 20px; }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
 }

@@ -46,8 +46,16 @@ const ContactUs = () => {
         
         .contact-page {
           font-family: 'Inter', sans-serif;
-          background: #505050;
+          // background: #505050;
         }
+            .light .form-wrapper p,
+           .light .form-wrapper h2 {
+          color: #ffffff;
+          }
+          .light .contact-card h3,
+            .light .contact-card p{
+          color: #ffffff;
+          }
         
         .container {
           max-width: 1250px;
@@ -57,7 +65,7 @@ const ContactUs = () => {
         
         /* Banner Section */
         .banner {
-          background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+          // background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
           padding: 80px 0;
           text-align: center;
         }
@@ -83,7 +91,7 @@ const ContactUs = () => {
         /* Contact Section */
         .contact-section {
           padding: 80px 0;
-          background: #050505;
+          // background: #050505;
         }
         
         .contact-grid {
