@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../assets/css/Navbar.css";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  // 🌙 Default DARK theme
+  const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") || "dark"
   );
+  const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
 
   const menuItems = [
     { name: 'Home', path: '/' },
@@ -17,67 +19,73 @@ const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Reviews', path: '/reviews' },
-    { name: 'Contact Us', path: '/Contact-Us' },
+    { name: 'Contact Us', path: '/contact-us' },
   ];
 
-  // Apply theme
+  // Theme
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // prevent scroll on mobile menu
+  // Scroll effect
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
-    return () => {
-      document.body.style.overflow = 'unset';
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Lock scroll
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
-
-  // toggle theme
   const toggleTheme = () => {
     setTheme(prev => (prev === "light" ? "dark" : "light"));
   };
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg bp-nav">
+      <nav className={`navbar navbar-expand-lg bp-nav ${scrolled ? "bp-scrolled" : ""}`}>
         <div className="bp-container d-flex align-items-center justify-content-between w-100">
 
           {/* Logo */}
-          <Link to="/" className="navbar-brand" onClick={handleLinkClick}>
-            <span>Bid Connectors</span>
+          <Link to="/" className="navbar-brand bp-brand">
+            Bid <span>Connectors</span>
           </Link>
 
-
+          {/* Hamburger */}
+          <button
+            className="navbar-toggler"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            ☰
+          </button>
 
           {/* Overlay */}
           {isOpen && (
-            <div
-              onClick={() => setIsOpen(false)}
-              style={{
-                position: "fixed",
-                inset: 0,
-                background: "rgba(0,0,0,0.6)",
-                zIndex: 999
-              }}
-            />
+            <div className="bp-overlay" onClick={() => setIsOpen(false)} />
           )}
 
           {/* Menu */}
-          <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+          <div className={`navbar-collapse ${isOpen ? "mobile-show" : ""}`}>
+
+            {/* CLOSE BUTTON */}
+            <button className="bp-close" onClick={() => setIsOpen(false)}>
+              ✕
+            </button>
 
             <ul className="navbar-nav mx-auto">
               {menuItems.map(item => (
                 <li className="nav-item" key={item.name}>
                   <Link
                     to={item.path}
-                    className="nav-link"
-                    onClick={handleLinkClick}
+                    className={`nav-link bp-link ${
+                      location.pathname === item.path ? "active" : ""
+                    }`}
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -85,24 +93,15 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="mobile-buttons">
-                        {/* 🌙 Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="btn btn-md "
-          >
-            {theme === "dark" ? "☀️ " : "🌙 "}
-          </button>
+            <div className="mobile-buttons d-flex align-items-center gap-2">
 
-          {/* Mobile toggle */}
-          <button
-            className="navbar-toggler"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            ☰
-          </button>
+              <button onClick={toggleTheme} className="btn btn-sm">
+                {theme === "dark" ? "☀️" : "🌙"}
+              </button>
+
               <button className="btn-signin">Sign In</button>
               <button className="btn-startfree">Start Free</button>
+
             </div>
 
           </div>
