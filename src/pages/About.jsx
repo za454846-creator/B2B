@@ -2,7 +2,7 @@ import React from "react";
 import StatsSection from "../components/Home_components/StatsSection";
 import Testimonials from "../components/Home_components/Testimonials";
 import CTASection from  '../components/Home_components/CTASection';
-import "../assets/css/about.css";
+import "../assets/css/About.css";
 import "../assets/css/Style.css";
 import storyImg from "../assets/Images/about_pageimage.jpg";
 import saraImg from "../assets/Images/44.jpg";

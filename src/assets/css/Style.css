@@ -92,67 +92,77 @@ body.light .section {
 body.dark .bp-nav {
   background: #000;
 }
-.light .feed-title,
-.light .feed-avatar li::before,
-.light .pipeline-label,
-.light .pipeline-num,
-.light .pipeline-sub,
-.light .feed-card-title,
-.light .feed-card-time,
-.light .project-title,
-.light .project_heading,
-.light .feature-desc,
-.light .whychoose-card h3,
-.light .whychoose-card h5,
-.light .whychoose-card p,
-.light .testimonial-card p,
-.light .testimonial-card h6,
-.light .pricing_card h3,
-.light .footer-brand p,
-.light .footer-links a,
-.light .footer-links h6,
-.light .stat-box p,
-.light .stat-box h3,
-.light .mission-vision-card h3,
-.light .mission-vision-card p,
-.light .value-card h3,
-.light .value-card p,
-.light .team-section h3,
-.light .team-section p
-{
-  color: var(--light) !important;
+body.light .bp-nav {
+  background: #fff;
 }
-.light .badge-features h2{
+/* LIGHT MODE NAV MENU */
+body.light .bp-nav .nav-item a,
+body.light .bp-nav .bp-link,
+body.light .bp-nav a {
+  color: #000 !important;
+}
+body.light .feed-title,
+body.light .feed-avatar li::before,
+body.light .pipeline-label,
+body.light .pipeline-num,
+body.light .pipeline-sub,
+body.light .feed-card-title,
+body.light .feed-card-time,
+body.light .project-title,
+body.light .project_heading,
+body.light .feature-desc,
+body.light .whychoose-card h3,
+body.light .whychoose-card h5,
+body.light .whychoose-card p,
+body.light .testimonial-card p,
+body.light .testimonial-card h6,
+body.light .pricing_card h3,
+body.light .footer-brand p,
+body.light .footer-links a,
+body.light .footer-links h6,
+body.light .stat-box p,
+body.light .stat-box h3,
+body.light .mission-vision-card h3,
+body.light .mission-vision-card p,
+body.light .value-card h3,
+body.light .value-card p,
+body.light .team-section h3,
+body.light .team-section p {
+  color: var(--color-light) !important;
+}
+body.light .badge-features h2 {
   color: var(--color-black) !important;
 }
-.dark .btn-signin{
+body.dark .btn-signin {
   color: var(--color-light);
 }
-.light .btn-signin{
+body.light .btn-signin {
   color: var(--color-black);
 }
-.dark ul.platform-features li{
+body.dark ul.platform-features li {
   color: var(--color-light);
 }
-.light ul.platform-features li{
+body.light ul.platform-features li {
   color: var(--color-dark);
 }
-.light .platform-tab{
+body.light .platform-tab {
   background: var(--color-black);
 }
-.light .simple-stat-card{
-background: var(--color-light);
+body.light .simple-stat-card {
+  background: var(--color-light);
 }
-.light .feed-avatar{
-background: var(--color-light);
+body.light .feed-avatar {
+  background: var(--color-light);
 }
-.dark .feed-avatar{
-    background-color: #0a0a0a;
+body.dark .feed-avatar {
+  background-color: #0a0a0a;
 }
 body.light .bp-nav {
   background: #fff;
 }
-
+body.light .bp-link {
+  color: var(--color-dark);
+}
 /* ---------- BUTTON BASE FIX ---------- */
 button {
   transition: 0.3s ease;
