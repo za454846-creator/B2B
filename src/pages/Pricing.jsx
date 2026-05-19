@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CTASection from "../components/Home_components/CTASection";
+import FaqComponent from  '../components/Home_components/FaqComponent';
 import "../assets/css/Pricing.css";
 
 function Pricing() {
@@ -30,7 +31,7 @@ function Pricing() {
       monthlyPrice: "7,999",
       yearlyPrice: "5,999",
       btnText: "Get Started",
-      btnClass: "btn-primary",
+      btnClass: "btn-card",
       popular: true,
       features: [
         { text: "Unlimited bid notifications", active: true },
@@ -44,7 +45,7 @@ function Pricing() {
     },
     {
       name: "Enterprise",
-      desc: "Built for organizations with custom needs.",
+      desc: "Built for organizations with custom needs organizations.",
       monthlyPrice: null,
       yearlyPrice: null,
       btnText: "Contact Sales",
@@ -187,7 +188,29 @@ function Pricing() {
 
         </div>
       </section>
-
+  {/* ================= FAQ (NEW FIXED SECTION) ================= */}
+      <FaqComponent
+        title="About Our Company"
+        description="Learn more about who we are and what we do."
+        faqItems={[
+          {
+            question: "Who are we?",
+            answer: "We are a modern digital agency focused on building scalable digital solutions.",
+          },
+          {
+            question: "What is our mission?",
+            answer: "We deliver high-quality digital products that create real business impact.",
+          },
+          {
+            question: "Where are we located?",
+            answer: "We work globally with a remote-first team structure.",
+          },
+          {
+            question: "Why choose us?",
+            answer: "We focus on performance, design quality, and long-term client success.",
+          },
+        ]}
+      />
       <CTASection />
     </>
   );

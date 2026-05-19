@@ -1,9 +1,13 @@
 import React from "react";
+
 import StatsSection from "../components/Home_components/StatsSection";
 import Testimonials from "../components/Home_components/Testimonials";
-import CTASection from  '../components/Home_components/CTASection';
+import CTASection from "../components/Home_components/CTASection";
+import FaqComponent from "../components/Home_components/FaqComponent";
+
 import "../assets/css/About.css";
 import "../assets/css/Style.css";
+
 import storyImg from "../assets/Images/about_pageimage.jpg";
 import saraImg from "../assets/Images/44.jpg";
 
@@ -40,7 +44,6 @@ function About() {
         <div className="container">
           <div className="row align-items-center">
 
-            {/* Left Content */}
             <div className="col-lg-6 col-md-6 col-12 mb-4 mb-md-0">
               <div className="left_content">
 
@@ -57,13 +60,11 @@ function About() {
               </div>
             </div>
 
-            {/* Right Content */}
             <div className="col-lg-6 col-md-6 col-12">
               <div className="right_col">
 
                 <img src={storyImg} alt="Our Story" />
 
-                {/* Stats Box */}
                 <div className="stats-wrapper">
 
                   <div className="stat-box">
@@ -94,34 +95,35 @@ function About() {
         </div>
       </section>
 
-      {/* ================= MISSION & VISION SECTION ================= */}
+      {/* ================= MISSION & VISION ================= */}
       <section className="mission-vision-section">
         <div className="container">
 
-          {/* Section Header */}
-          <div className="mission-vision-header">
+          <div className="mission-vision-header text-center">
             <span className="about-badge">Purpose</span>
             <h2 className="mission-vision-title">Mission & Vision</h2>
           </div>
 
-          <div className="mission-vision-grid">
+          <div className="row g-4 mission-vision-grid">
 
-            {/* Mission */}
-            <div className="mission-vision-card">
-              <div className="mission-vision-icon-wrap">
-                <i className="bi bi-bullseye"></i>
+            <div className="col-lg-6 col-md-6">
+              <div className="mission-vision-card h-100">
+                <div className="mission-vision-icon-wrap">
+                  <i className="bi bi-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To empower businesses with digital products that perform and drive real growth.</p>
               </div>
-              <h3>Our Mission</h3>
-              <p>To empower businesses with digital products that perform and drive real growth.</p>
             </div>
 
-            {/* Vision */}
-            <div className="mission-vision-card">
-              <div className="mission-vision-icon-wrap">
-                <i className="bi bi-eye"></i>
+            <div className="col-lg-6 col-md-6">
+              <div className="mission-vision-card h-100">
+                <div className="mission-vision-icon-wrap">
+                  <i className="bi bi-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>A world where every digital product delivers measurable business results.</p>
               </div>
-              <h3>Our Vision</h3>
-              <p>A world where every digital product delivers measurable business results.</p>
             </div>
 
           </div>
@@ -129,11 +131,10 @@ function About() {
         </div>
       </section>
 
-      {/* ================= CORE VALUES SECTION ================= */}
+      {/* ================= CORE VALUES ================= */}
       <section className="core-values-section">
         <div className="container">
 
-          {/* Section Header */}
           <div className="text-center mb-5">
             <span className="about-badge">WHAT DRIVES US</span>
             <h2 className="values-title">Our Core Values</h2>
@@ -146,49 +147,22 @@ function About() {
 
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
-                <div className="value-icon"><i className="bi bi-graph-up-arrow"></i></div>
                 <h3>Results Over Vanity</h3>
-                <p>We focus on conversion, retention and real business growth.</p>
+                <p>We focus on real business growth.</p>
               </div>
             </div>
 
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
-                <div className="value-icon"><i className="bi bi-shield-check"></i></div>
-                <h3>Radical Transparency</h3>
-                <p>No hidden costs, no surprises — full clarity in every project.</p>
+                <h3>Transparency</h3>
+                <p>No hidden costs or surprises.</p>
               </div>
             </div>
 
             <div className="col-lg-4 col-md-6">
               <div className="value-card">
-                <div className="value-icon"><i className="bi bi-lightbulb"></i></div>
-                <h3>Obsessive Craft</h3>
-                <p>We focus on every detail like micro-interactions and performance.</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="value-card">
-                <div className="value-icon"><i className="bi bi-people"></i></div>
-                <h3>Client Partnership</h3>
-                <p>We work like an extension of your own team.</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="value-card">
-                <div className="value-icon"><i className="bi bi-rocket"></i></div>
-                <h3>Ship Fast, Iterate</h3>
-                <p>We launch quickly and improve based on real feedback.</p>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div className="value-card">
-                <div className="value-icon"><i className="bi bi-book"></i></div>
-                <h3>Never Stop Learning</h3>
-                <p>We continuously improve through research and innovation.</p>
+                <h3>Quality First</h3>
+                <p>We focus on performance and detail.</p>
               </div>
             </div>
 
@@ -196,38 +170,42 @@ function About() {
 
         </div>
       </section>
-<section className="process-section">
-  <div className="container">
 
-    <div className="text-center">
-      <span className="about-badge">WHAT DRIVES US</span>
-      <h2 className="section-title">Our Process</h2>
-      <p className="section-desc">
-        Here's how we work with our clients to deliver exceptional results.
-      </p>
-    </div>
+      {/* ================= PROCESS (FIXED - ORIGINAL DESIGN SAME) ================= */}
+      <section className="process-section">
+        <div className="container">
 
-    <div className="row process-grid">
-
-      {[ 
-        {id:1, title:"Discovery", desc:"We start by understanding your business goals and challenges."},
-        {id:2, title:"Planning", desc:"We create a roadmap tailored to your needs."},
-        {id:3, title:"Execution", desc:"We implement strategies with precision."},
-        {id:4, title:"Delivery", desc:"We ensure quality results and satisfaction."}
-      ].map((item) => (
-        <div key={item.id} className="col-lg-3 col-md-6 col-sm-12">
-          <div className="process-step">
-            <span>{item.id}</span>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+          <div className="text-center">
+            <span className="about-badge">WHAT DRIVES US</span>
+            <h2 className="section-title">Our Process</h2>
+            <p className="section-desc">
+              Here's how we work with our clients to deliver exceptional results.
+            </p>
           </div>
-        </div>
-      ))}
 
-    </div>
-  </div>
-</section>
-      {/* ================= TEAM SECTION ================= */}
+          <div className="row process-grid">
+
+            {[
+              { id: 1, title: "Discovery", desc: "We start by understanding your business goals and challenges." },
+              { id: 2, title: "Planning", desc: "We create a roadmap tailored to your needs." },
+              { id: 3, title: "Execution", desc: "We implement strategies with precision." },
+              { id: 4, title: "Delivery", desc: "We ensure quality results and satisfaction." }
+            ].map((item) => (
+              <div key={item.id} className="col-lg-3 col-md-6 col-sm-12">
+                <div className="process-step">
+                  <span>{item.id}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= TEAM (FIXED - ORIGINAL DESIGN SAME) ================= */}
       <section className="team-section">
         <div className="container">
 
@@ -239,48 +217,24 @@ function About() {
               <img src={saraImg} alt="Ali Khan" className="team-img" />
               <h3>Ali Khan</h3>
               <p className="role">Frontend Developer</p>
-              <div className="social-icons">
-                <i className="bi bi-facebook"></i>
-                <i className="bi bi-twitter-x"></i>
-                <i className="bi bi-linkedin"></i>
-                <i className="bi bi-instagram"></i>
-              </div>
             </div>
 
             <div className="team-card">
               <img src={saraImg} alt="Sara Ahmed" className="team-img" />
               <h3>Sara Ahmed</h3>
               <p className="role">UI/UX Designer</p>
-              <div className="social-icons">
-                <i className="bi bi-facebook"></i>
-                <i className="bi bi-twitter-x"></i>
-                <i className="bi bi-linkedin"></i>
-                <i className="bi bi-instagram"></i>
-              </div>
             </div>
 
             <div className="team-card">
               <img src={saraImg} alt="Usman Tariq" className="team-img" />
               <h3>Usman Tariq</h3>
               <p className="role">Backend Developer</p>
-              <div className="social-icons">
-                <i className="bi bi-facebook"></i>
-                <i className="bi bi-twitter-x"></i>
-                <i className="bi bi-linkedin"></i>
-                <i className="bi bi-instagram"></i>
-              </div>
             </div>
 
             <div className="team-card">
               <img src={saraImg} alt="Ayesha Malik" className="team-img" />
               <h3>Ayesha Malik</h3>
               <p className="role">Project Manager</p>
-              <div className="social-icons">
-                <i className="bi bi-facebook"></i>
-                <i className="bi bi-twitter-x"></i>
-                <i className="bi bi-linkedin"></i>
-                <i className="bi bi-instagram"></i>
-              </div>
             </div>
 
           </div>
@@ -288,9 +242,35 @@ function About() {
         </div>
       </section>
 
-      {/* ================= TESTIMONIALS SECTION ================= */}
+      {/* ================= TESTIMONIALS ================= */}
       <Testimonials />
-        <CTASection />
+
+      {/* ================= FAQ (NEW FIXED SECTION) ================= */}
+      <FaqComponent
+        title="About Our Company"
+        description="Learn more about who we are and what we do."
+        faqItems={[
+          {
+            question: "Who are we?",
+            answer: "We are a modern digital agency focused on building scalable digital solutions.",
+          },
+          {
+            question: "What is our mission?",
+            answer: "We deliver high-quality digital products that create real business impact.",
+          },
+          {
+            question: "Where are we located?",
+            answer: "We work globally with a remote-first team structure.",
+          },
+          {
+            question: "Why choose us?",
+            answer: "We focus on performance, design quality, and long-term client success.",
+          },
+        ]}
+      />
+
+      {/* ================= CTA ================= */}
+      <CTASection />
     </>
   );
 }

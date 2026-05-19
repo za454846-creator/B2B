@@ -130,12 +130,13 @@ body.dark .pricing_card {
   color: #e4e4e7;
 }
 
-body.light .pricing_card {
-  background: #fff;
-  border: 1px solid #e4e4e7;
-  color: #111;
-}
 
+body.light .pricing_card {
+  color: #fff;
+}
+body.light .pricing_card ul li {
+  color: #fff;
+}
 .pricing_card:hover {
   transform: translateY(-8px);
 }

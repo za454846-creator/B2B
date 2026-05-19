@@ -68,6 +68,9 @@
   transition: color 0.3s ease;
 }
 
+ul.navbar-nav  li{
+  padding: 0 10px;
+}
 .btn-signin:hover {
   color: #E8500A;
 }
