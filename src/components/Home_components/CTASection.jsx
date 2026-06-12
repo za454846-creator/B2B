@@ -1,46 +1,47 @@
 import React from "react";
 import "../../assets/css/Home.css";
 
-const CTASection = () => {
+const CTASection = ({
+  titleLine1,
+  titleHighlight,
+  subText,
+  primaryBtnText,
+  primaryBtnLink,
+  secondaryBtnText,
+  secondaryBtnLink,
+  noteText,
+}) => {
   return (
     <section className="cta-section">
-
-      {/* glow background */}
       <div className="cta-glow"></div>
 
       <div className="cta-container">
 
         {/* Heading */}
         <h2 className="cta-title">
-          <span>Your Next $5M Project</span>
+          <span>{titleLine1}</span>
           <br />
-          <span className="highlight">Is Already Here.</span>
+          <span className="highlight">{titleHighlight}</span>
         </h2>
 
         {/* Subtext */}
-        <p className="cta-subtext">
-          Join 9,200+ contractors who stopped guessing and started
-          <br />
-          winning. Free to start — no credit card needed.
-        </p>
+        <p className="cta-subtext">{subText}</p>
 
         {/* Buttons */}
         <div className="cta-buttons">
 
-          <button className="btn-primary">
-            Start Finding Projects <span>→</span>
-          </button>
+          <a href={primaryBtnLink} className="btn-primary">
+            {primaryBtnText} <span>→</span>
+          </a>
 
-          <button className="btn-secondary">
-            <span>☎</span> Schedule a Demo
-          </button>
+          <a href={secondaryBtnLink} className="btn-secondary">
+            <span>☎</span> {secondaryBtnText}
+          </a>
 
         </div>
 
-        {/* footer note */}
-        <p className="cta-note">
-          No credit card · Free forever plan · Cancel anytime
-        </p>
+        {/* Footer Note */}
+        <p className="cta-note">{noteText}</p>
 
       </div>
     </section>

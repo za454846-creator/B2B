@@ -1,41 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/Home.css";
 
-/**
- * FAQ list shown on the homepage.
- * - Simple, accessible markup (buttons for toggles)
- * - Styling is provided via `src/assets/css/Home.css`
- * - State is local to this component (which item is open)
- */
-
-// Static list of Q&A entries. Replace or fetch as needed.
-const faqItems = [
-  {
-    question: "How quickly can I get started?",
-    answer:
-      "You can get set up quickly with a guided onboarding flow and clear documentation. The platform is designed to work from day one — no steep learning curve.",
-  },
-  {
-    question: "What payment and billing options are available?",
-    answer:
-      "We offer monthly and annual subscriptions with simple billing and transparent pricing. You can manage payment details directly from your dashboard.",
-  },
-  {
-    question: "How is my data protected?",
-    answer:
-      "Your data is protected with standard security controls, encrypted storage, and regular audits. We keep your information secure and private.",
-  },
-  {
-    question: "Can I integrate this with other tools?",
-    answer:
-      "Yes. The platform supports integrations and APIs so you can connect the tools you already use.",
-  },
-];
-
-/**
- * Small chevron icon used to indicate open/closed state.
- * We use `currentColor` so CSS can control the color.
- */
 const ChevronIcon = ({ open }) => (
   <svg
     width="20"
@@ -60,49 +25,42 @@ const ChevronIcon = ({ open }) => (
   </svg>
 );
 
-/**
- * `FaqComponent` - simple, commented and easy-to-read structure.
- * Accessibility: each toggle is a button with an associated content region.
- */
-const FaqComponent = () => {
-  // Index of the currently open FAQ item (null if none)
-  const [openIndex, setOpenIndex] = useState(0);
+const FaqComponent = ({
+  title = "Everything you need",
+  highlight = "to know.",
+  description = "Simple answers to common questions.",
+  faqs = [],
+  defaultOpenIndex = 0,
+}) => {
+  const [openIndex, setOpenIndex] = useState(defaultOpenIndex);
 
-  // Toggle open/closed state for an item by index
-  const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
+  const toggle = (index) =>
+    setOpenIndex(openIndex === index ? null : index);
 
   return (
     <section className="faq-section" aria-label="Frequently Asked Questions">
       <div className="faq-wrapper">
 
-        {/* Heading: centered by external CSS */}
+        {/* Heading */}
         <div className="faq-headline">
           <h2>
-            Everything you need
+            {title}
             <br />
-            <em>to know.</em>
+            <em>{highlight}</em>
           </h2>
-          <p>
-            Simple answers to the most common questions about setup, billing,
-            security and integrations.
-          </p>
+          <p>{description}</p>
         </div>
 
-        {/* Accordion list: visual state is controlled by adding/removing the `open` class */}
+        {/* FAQ List */}
         <div className="faq-card">
-          {faqItems.map((item, i) => {
+          {faqs.map((item, i) => {
             const isOpen = openIndex === i;
             const contentId = `faq-content-${i}`;
 
             return (
               <div key={i} className={`faq-item${isOpen ? " open" : ""}`}>
-                {/* Decorative accent line (CSS-controlled) */}
                 <div className="faq-accent-line" />
 
-                {/*
-                  Button toggles the answer. Use aria-expanded and aria-controls
-                  so screen readers understand the relationship.
-                */}
                 <button
                   type="button"
                   className="faq-item-header"
@@ -123,14 +81,18 @@ const FaqComponent = () => {
                   </span>
                 </button>
 
-                {/* Answer region. Visibility and animation via CSS */}
-                <div id={contentId} className="faq-body" role="region" aria-labelledby={contentId + "-label"}>
+                <div
+                  id={contentId}
+                  className="faq-body"
+                  role="region"
+                >
                   <div className="faq-body-inner">{item.answer}</div>
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

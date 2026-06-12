@@ -246,32 +246,33 @@ function About() {
       <Testimonials />
 
       {/* ================= FAQ (NEW FIXED SECTION) ================= */}
-      <FaqComponent
-        title="About Our Company"
-        description="Learn more about who we are and what we do."
-        faqItems={[
-          {
-            question: "Who are we?",
-            answer: "We are a modern digital agency focused on building scalable digital solutions.",
-          },
-          {
-            question: "What is our mission?",
-            answer: "We deliver high-quality digital products that create real business impact.",
-          },
-          {
-            question: "Where are we located?",
-            answer: "We work globally with a remote-first team structure.",
-          },
-          {
-            question: "Why choose us?",
-            answer: "We focus on performance, design quality, and long-term client success.",
-          },
-        ]}
-      />
+     <FaqComponent
+  title="About Our Company"
+  highlight="to know."
+  description="Simple answers about setup, billing, security and integrations."
+  faqs={[
+    {
+      question: "How quickly can I get started?",
+      answer: "You can start within minutes with onboarding."
+    },
+    {
+      question: "Is it free to use?",
+      answer: "Yes, there is a free plan available."
+    },
+  ]}
+/>
 
       {/* ================= CTA ================= */}
-      <CTASection />
-    </>
+<CTASection
+  titleLine1="Your Next $5M Project"
+  titleHighlight="Is Already Here."
+  subText="Join 9,200+ contractors who stopped guessing and started winning. Free to start — no credit card needed."
+  primaryBtnText="Start Finding Projects"
+  primaryBtnLink="/projects"
+  secondaryBtnText="Schedule a Demo"
+  secondaryBtnLink="/demo"
+  noteText="No credit card · Free forever plan · Cancel anytime"
+/>    </>
   );
 }
 

@@ -1636,6 +1636,7 @@ background: radial-gradient(ellipse, rgba(234, 114, 39, 0.35) 0%, transparent 70
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -1646,6 +1647,7 @@ background: radial-gradient(ellipse, rgba(234, 114, 39, 0.35) 0%, transparent 70
 /* secondary */
 .btn-secondary {
   background: #1a1a1a;
+  text-decoration: none;
   color: #e8500a;
   border: 1.5px solid #2e2e2e;
   padding: 16px 28px;
@@ -1673,6 +1675,8 @@ background: radial-gradient(ellipse, rgba(234, 114, 39, 0.35) 0%, transparent 70
 
 /* responsive */
 @media (max-width: 768px) {
+
+  
   .cta-title {
     font-size: 28px;
   }
