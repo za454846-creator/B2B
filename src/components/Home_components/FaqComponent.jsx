@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../assets/css/Home.css";
+import "../../assets/css/home.css";
 
 const ChevronIcon = ({ open }) => (
   <svg

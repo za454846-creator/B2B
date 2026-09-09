@@ -1,29 +1,31 @@
 import { useState } from "react";
-import '../../assets/css/Home.css';
-import '../../assets/css/Style.css';
+import '../../assets/css/home.css';
+import '../../assets/css/style.css';
+
+
 export default function Pricing() {
   const [hovered, setHovered] = useState(null);
 
   const plans = [
     {
       name: "Starter",
-      desc: "For solo contractors getting started",
+      desc: "For a single estimator testing the platform",
       price: "$0",
       period: "/month",
       btnLabel: "Start Free",
       btnStyle: "outline",
       features: [
-        { label: "50 project views/month", included: true },
-        { label: "Basic project filters", included: true },
-        { label: "Email alerts", included: true },
-        { label: "Bid management", included: false },
-        { label: "AI insights", included: false },
+        { label: "30 project views/month", included: true },
+        { label: "Basic trade & location filters", included: true },
+        { label: "Weekly email alerts", included: true },
+        { label: "Bid package assembly", included: false },
+        { label: "Trade partner directory", included: false },
       ],
     },
     {
-      name: "Pro",
-      desc: "For growing subcontractors",
-      price: "$199",
+      name: "Growth",
+      desc: "For active subcontractors and small GCs",
+      price: "$149",
       period: "/month",
       highlight: true,
       badge: "Most Popular",
@@ -31,25 +33,25 @@ export default function Pricing() {
       btnStyle: "filled",
       features: [
         { label: "Unlimited project views", included: true },
-        { label: "Advanced filters + AI matching", included: true },
-        { label: "Bid management", included: true },
-        { label: "Digital takeoff (500 pg/mo)", included: true },
-        { label: "AI win prediction", included: true },
-        { label: "Sub network access", included: true },
+        { label: "Advanced filters + saved searches", included: true },
+        { label: "Bid package assembly", included: true },
+        { label: "Takeoff Studio (300 pages/mo)", included: true },
+        { label: "Trade partner directory access", included: true },
+        { label: "Bid readiness check", included: true },
       ],
     },
     {
       name: "Enterprise",
-      desc: "For GCs & large contractors",
+      desc: "For general contractors and multi-office firms",
       price: "Custom",
       btnLabel: "Talk to Sales",
       btnStyle: "outline",
       features: [
-        { label: "Everything in Pro", included: true },
+        { label: "Everything in Growth", included: true },
         { label: "Unlimited takeoff pages", included: true },
-        { label: "Team management (10+ seats)", included: true },
+        { label: "Team seats (10+)", included: true },
         { label: "API access & integrations", included: true },
-        { label: "Dedicated success manager", included: true },
+        { label: "Dedicated account manager", included: true },
         { label: "Custom reporting", included: true },
       ],
     },
@@ -73,11 +75,16 @@ export default function Pricing() {
 
         {/* HEADER */}
         <div className="pricing-header">
-          <span className="badge">Pricing</span>
-          <h2>
-            Simple Pricing <span>No Surprises</span>
+          {/* <span className="badge">Pricing</span> */}
+
+            <div className="hero-live-badge mb-4">
+              <span className="hero-live-dot"></span>
+              <span>Pricing</span>
+            </div>
+          <h2 className="mt-3">
+            Plans Built Around <span>How Many Projects You Chase</span>
           </h2>
-          <p>Start free. Upgrade when you're ready.</p>
+          <p>Start free! Upgrade when you need more views, more filters, or a bigger team.</p>
         </div>
 
         {/* pricing_cardS */}

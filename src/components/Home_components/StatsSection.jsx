@@ -1,48 +1,58 @@
-import React from 'react';
-import '../../assets/css/Home.css';
-import '../../assets/css/Style.css';
+import React from "react";
+import "../../assets/css/home.css";
+import "../../assets/css/style.css";
 
-const StatsSection = () => {
+
+
+const defaultStats = [
+  {
+    value: "60,000+",
+    label: "ACTIVE PROJECTS",
+  },
+  {
+    value: "9,200+",
+    label: "CONTRACTORS",
+  },
+  {
+    value: "34%",
+    label: "AVG WIN RATE",
+  },
+  {
+    value: "$2B",
+    label: "PROJECTS VALUE TRACKED",
+  },
+];
+
+const StatsSection = ({ stats = defaultStats }) => {
   return (
-    <div className="stats-section py-5">
+    <section className="stats-section py-5">
       <div className="container">
-        <div className="row g-4">
 
-          {/* Active Projects */}
-          <div className="col-md-3">
-            <div className="simple-stat-card">
-              <h3>60,000+</h3>
-              <p>ACTIVE PROJECTS</p>
-            </div>
-          </div>
+        <div className="row g-4 text-center align-items-stretch">
 
-          {/* Contractors */}
-          <div className="col-md-3">
-            <div className="simple-stat-card">
-              <h3>9,200+</h3>
-              <p>CONTRACTORS</p>
-            </div>
-          </div>
+          {stats.map((stat, index) => (
+            <div
+              className="col-12 col-sm-6 col-md-3 d-flex"
+              key={index}
+            >
+              <div className="simple-stat-card w-100 d-flex flex-column justify-content-center">
 
-          {/* Average Win Rate */}
-          <div className="col-md-3">
-            <div className="simple-stat-card">
-              <h3>34%</h3>
-              <p>AVG WIN RATE</p>
-            </div>
-          </div>
+                <h3>
+                  {stat.value}
+                </h3>
 
-          {/* Projects Value Tracked */}
-          <div className="col-md-3">
-            <div className="simple-stat-card">
-              <h3>$2B</h3>
-              <p>PROJECTS VALUE TRACKED</p>
+                <p>
+                  {stat.label}
+                </p>
+
+              </div>
             </div>
-          </div>
+          ))}
 
         </div>
+
       </div>
-    </div>
+    </section>
   );
 };
 

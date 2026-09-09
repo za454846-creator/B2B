@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/Home.css";
+import "../../assets/css/home.css";
 
 const CTASection = ({
   titleLine1,
@@ -7,8 +7,10 @@ const CTASection = ({
   subText,
   primaryBtnText,
   primaryBtnLink,
+  primaryBtnNewTab = false,
   secondaryBtnText,
   secondaryBtnLink,
+  secondaryBtnNewTab = true,
   noteText,
 }) => {
   return (
@@ -30,13 +32,33 @@ const CTASection = ({
         {/* Buttons */}
         <div className="cta-buttons">
 
-          <a href={primaryBtnLink} className="btn-primary">
-            {primaryBtnText} <span>→</span>
-          </a>
+          {primaryBtnNewTab ? (
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={() => window.open(primaryBtnLink, "_blank", "noopener,noreferrer")}
+            >
+              {primaryBtnText} <span>→</span>
+            </button>
+          ) : (
+            <a href={primaryBtnLink} className="btn-primary">
+              {primaryBtnText} <span>→</span>
+            </a>
+          )}
 
-          <a href={secondaryBtnLink} className="btn-secondary">
-            <span>☎</span> {secondaryBtnText}
-          </a>
+          {secondaryBtnNewTab ? (
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => window.open(secondaryBtnLink, "_blank", "noopener,noreferrer")}
+            >
+              {secondaryBtnText}
+            </button>
+          ) : (
+            <a href={secondaryBtnLink} className="btn-secondary">
+              <span>☎</span> {secondaryBtnText}
+            </a>
+          )}
 
         </div>
 

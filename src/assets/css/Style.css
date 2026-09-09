@@ -1,15 +1,24 @@
-/* ---------- Google Font Import ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/*
+style.css — base reset + typography
 
-/* ---------- CSS Variables ---------- */
-:root {
-  --color-black: #111111;
-  --color-dark: #161211;
-  --color-orange: #E86129;
-  --color-light: #E4E4E7;
-}
+WHY THE HEADINGS WEREN'T APPLYING:
+Bootstrap ka Reboot bhi "h1, h2, h3..." bare element selectors par
+font-size aur line-height:1.2 set karta hai. Aapki file bhi wahi
+selectors use kar rahi thi — dono ki specificity (0,0,1) barabar,
+to jo stylesheet baad mein load hoti thi wo jeet jati thi. Isi liye
+purani file mein !important lagana para tha.
 
-/* ---------- GLOBAL RESET ---------- */
+FIX: headings ab "body h1" (0,0,2) se target hain, jo Bootstrap ke
+"h1" (0,0,1) se upar hai — bina kisi !important ke. Component-level
+class rules (0,1,0) is se bhi upar hain, to wo bhi normally kaam
+karte hain.
+
+ORDER BHI THEEK KAREIN — neeche "IMPORT ORDER" note dekhein.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ---------- RESET ---------- */
 *,
 *::before,
 *::after {
@@ -18,209 +27,147 @@
   padding: 0;
 }
 
-/* ---------- BODY BASE ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  transition: all 0.3s ease;
-}
-
-
-
-/* =========================
-   🌙 DARK MODE (DEFAULT)
-========================= */
-body.dark {
-  background-color: #0a0a0a;
-  color: #e4e4e7;
-}
-
-/* =========================
-   ☀️ LIGHT MODE
-========================= */
-body.light {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   background-color: #ffffff;
-  color: #111111;
+  color: #0F172A;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---------- CONTAINER ---------- */
-.container {
-  max-width: 1250px !important;
-  margin: 0 auto;
-  padding: 0 16px;
-  width: 100%;
+img,
+svg {
+  max-width: 100%;
+  display: block;
 }
 
-/* ---------- TEXT ---------- */
-body.dark p,
-body.dark h1,
-body.dark h2,
-body.dark h3,
-body.dark h4,
-body.dark h5,
-body.dark h6 {
-  color: #e4e4e7;
+/* ---------- TYPE SCALE ----------
+   clamp(min, preferred, max): min mobile par, max desktop par, aur
+   beech mein viewport ke saath smooth — breakpoint par jump nahi.
+   "body" prefix Bootstrap ko override karne ke liye hai. */
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: inherit;
+  color: inherit;
+  margin-bottom: 0;
+  text-wrap: balance;
 }
 
-body.light p,
-body.light h1,
-body.light h2,
-body.light h3,
-body.light h4,
-body.light h5,
-body.light h6 {
-  color: #111;
+body h1 {
+  font-size: clamp(2rem, 1.30rem + 3.40vw, 3.875rem);    /* 32 → 62px */
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.035em;
 }
 
-/* ---------- LINKS ---------- */
-body.dark a {
-  color: #e4e4e7;
-}
-
-body.light a {
-  color: #111;
-}
-
-/* ---------- SECTIONS ---------- */
-body.dark .section {
-  background: #0a0a0a;
-}
-
-body.light .section {
-  background: #f8f8f8;
-}
-
-/* ---------- NAVBAR ---------- */
-body.dark .bp-nav {
-  background: #000;
-}
-body.light .bp-nav {
-  background: #fff;
-}
-/* LIGHT MODE NAV MENU */
-body.light .bp-nav .nav-item a,
-body.light .bp-nav .bp-link,
-body.light .bp-nav a {
-  color: #000 !important;
-}
-body.light .feed-title,
-body.light .feed-avatar li::before,
-body.light .pipeline-label,
-body.light .pipeline-num,
-body.light .pipeline-sub,
-body.light .feed-card-title,
-body.light .feed-card-time,
-body.light .project-title,
-body.light .project_heading,
-body.light .feature-desc,
-body.light .whychoose-card h3,
-body.light .whychoose-card h5,
-body.light .whychoose-card p,
-body.light .testimonial-card p,
-body.light .testimonial-card h6,
-body.light .pricing_card h3,
-body.light .footer-brand p,
-body.light .footer-links a,
-body.light .footer-links h6,
-body.light .stat-box p,
-body.light .stat-box h3,
-body.light .mission-vision-card h3,
-body.light .mission-vision-card p,
-body.light .value-card h3,
-body.light .value-card p,
-body.light .team-section h3,
-body.light .team-section p {
-  color: var(--color-light) !important;
-}
-body.light .badge-features h2 {
-  color: var(--color-black) !important;
-}
-body.dark .btn-signin {
-  color: var(--color-light);
-}
-body.light .btn-signin {
-  color: var(--color-black);
-}
-body.dark ul.platform-features li {
-  color: var(--color-light);
-}
-body.light ul.platform-features li {
-  color: var(--color-dark);
-}
-body.light .platform-tab {
-  background: var(--color-black);
-}
-body.light .simple-stat-card {
-  background: var(--color-light);
-}
-body.light .feed-avatar {
-  background: var(--color-light);
-}
-body.dark .feed-avatar {
-  background-color: #0a0a0a;
-}
-body.light .bp-nav {
-  background: #fff;
-}
-body.light .bp-link {
-  color: var(--color-dark);
-}
-/* ---------- BUTTON BASE FIX ---------- */
-button {
-  transition: 0.3s ease;
-}
-
-/* ---------- HEADING BASE ---------- */
-h1 {
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 1.1;
-}
-
-h2 {
-  font-size: 36px;
-  font-weight: 800 !important;
-}
-
-h3 {
-  font-size: 24px;
+body h2 {
+  font-size: clamp(1.625rem, 1.25rem + 1.75vw, 2.375rem); /* 26 → 38px */
   font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
 }
 
-h4 {
-  font-size: 18px;
+body h3 {
+  font-size: clamp(1.125rem, 1.05rem + 0.36vw, 1.3125rem); /* 18 → 21px */
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+body h4 {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);      /* 16 → 18px */
   font-weight: 600;
+  line-height: 1.4;
 }
 
-h5 {
-  font-size: 16px;
+body h5 {
+  font-size: 1rem;
   font-weight: 600;
+  line-height: 1.45;
 }
 
-h6 {
-  font-size: 14px;
-  font-weight: 500;
+body h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
-/* ---------- PARAGRAPH ---------- */
-p {
-  font-size: 16px;
-  line-height: 24px;
+body p {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 1024px) {
-  h1 { font-size: 48px; }
-  h2 { font-size: 30px; }
+a {
+  color: inherit;
 }
 
-@media (max-width: 768px) {
-  h1 { font-size: 36px; }
-  h2 { font-size: 26px; }
-  h3 { font-size: 20px; }
+/* ---------- FORM CONTROLS ---------- */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
-@media (max-width: 480px) {
-  h1 { font-size: 28px; }
-  h2 { font-size: 22px; }
+button {
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+              color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #E8500A;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Bootstrap ka .container max-width breakpoints set karta hai;
+   site 1250px wide chahiye, is liye override yahan hai. */
+body .container {
+  max-width: 1250px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+IMPORT ORDER
+------------
+Bootstrap ko sab se PEHLE load karein, apni CSS baad mein. Abhi
+Navbar.jsx ke andar bootstrap import hai, jis se order component
+evaluation par depend karta hai aur predictable nahi rehta.
+
+src/index.js (ya main.jsx) mein sab se upar:
+
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'bootstrap-icons/font/bootstrap-icons.css';
+    import './assets/css/style.css';
+    import './assets/css/home.css';
+    import './assets/css/navbar.css';
+
+Aur Navbar.jsx se ye line hata dein:
+
+    import 'bootstrap/dist/css/bootstrap.min.css';
+*/

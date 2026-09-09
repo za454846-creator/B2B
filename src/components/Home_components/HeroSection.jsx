@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import '../../assets/css/Home.css';
-import '../../assets/css/Style.css';
-
+import '../../assets/css/home.css';
+import '../../assets/css/style.css';
+import heroBg from '../../assets/Images/hero-bgs.webp';
 /* =========================
    FEED DATA
 ========================= */
@@ -44,13 +44,12 @@ const feedItems = [
 ];
 
 /* =========================
-   PIPELINE DATA
+   PIPELINE DATA (updated: Monthly Performance Overview)
 ========================= */
 const pipelineStats = [
-  { num: '247', label: 'Leads' },
-  { num: '89', label: 'Bids' },
-  { num: '34', label: 'Shortlisted' },
-  { num: '31', label: 'Won' },
+  { num: '183', label: 'Active Leads' },
+  { num: '62', label: 'Bids Submitted' },
+  { num: '22', label: 'Shortlisted Opportunities' },
 ];
 
 /* =========================
@@ -104,7 +103,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero-section">
+    <section  className="hero-section"style={{ backgroundImage: `url(${heroBg})` }}>
 
       <div className="container">
         <div className="row align-items-center g-5">
@@ -114,28 +113,28 @@ const HeroSection = () => {
 
             <div className="hero-live-badge mb-4">
               <span className="hero-live-dot"></span>
-              <span>2,847 projects added this week</span>
-              <span className="hero-live-tag">LIVE</span>
+              <span>1000+ New Opportunities Every Week</span>
             </div>
 
             <h1 className="hero-heading mb-4">
-              Stop Chasing.<br />
-              Start <span className="hero-orange-italic">Winning</span><br />
-              Projects.
+              Every Bid Starts With Finding<br />
+              the <span className="hero-orange-italic">Right Job</span>.
             </h1>
 
             <p className="hero-subtext mb-4">
-              Real-time construction leads, AI bidding, and smart estimating —
-              win more commercial projects faster.
+              Bid Connectors tracks commercial and public construction
+              opportunities across the U.S. and matches them to your trade,
+              service area, and typical contract size. Find projects
+              effortlessly, track your bids, and win commercial projects faster!
             </p>
 
-            <div className="d-flex gap-3 mb-4 flex-wrap">
-              <button className="hero-btn-primary">
-                Find Projects Now
-              </button>
-              <button className="hero-btn-secondary">
-                Watch Demo
-              </button>
+            <div className="d-flex gap-3 mb-4 flex-wrap position-relative z-1">
+              <a href="https://bidconnectors.com/bidconnectors/register" target="_blank"><button className="hero-btn-primary">
+                Browse Open Projects
+              </button></a>
+              <a href="https://bidconnectors.com/bidconnectors/register" target="_blank"><button className="hero-btn-secondary">
+                Help Me Bid
+              </button></a>
             </div>
 
           </div>
@@ -198,7 +197,7 @@ const HeroSection = () => {
               <div className="pipeline">
 
                 <div className="pipeline-label">
-                  Your win pipeline — this month
+                  Monthly Performance Overview
                 </div>
 
                 <div className="d-flex justify-content-between mb-2">
@@ -213,9 +212,9 @@ const HeroSection = () => {
                 </div>
 
                 <div className="pipeline-meta">
-                  Conversion <span style={{ color: '#E86129' }}>34.8%</span>
+                  Success Rate <span style={{ color: '#E86129' }}>27.3%</span>
                   &nbsp;•&nbsp;
-                  Value <span className="text-white">$48.2M</span>
+                  Pipeline Value <span className="text-white">$31.2M</span>
                 </div>
 
               </div>

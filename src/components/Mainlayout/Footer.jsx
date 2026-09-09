@@ -1,7 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/css/Footer.css";
-import "../../assets/css/Footer.css"
+import "../../assets/css/footer.css";
+
+/*
+  FIXES IN THIS VERSION:
+  - Removed a duplicate `import "../../assets/css/footer.css"` (it was
+    imported twice, back to back — harmless but redundant).
+  - Rebuilt the footer links to ONLY include pages that actually exist
+    as routes in App.jsx right now:
+      Home (/), About (/about), Subcontractors
+      (/solutions/subcontractors), Building Product Manufacturers
+      (/solutions/building-product-manufacturers), FAQ (/faq),
+      Contact Us (/contact-us), Pricing (/pricing).
+    Every other link from the previous version (Project Finder, Bid
+    Manager, Estimating, Analytics, Careers, Blog, Help Center, API
+    Docs, Security, Privacy) pointed to pages that don't exist yet and
+    would have hit the 404 route — removed until those pages exist.
+  - Added a <nav> landmark with aria-label around the link columns for
+    better accessibility/SEO page-structure signals.
+
+  When you add a new page + route later, just add its link here too —
+  keep the path in sync with whatever you register in App.jsx.
+*/
 
 const Footer = () => {
   return (
@@ -13,40 +33,37 @@ const Footer = () => {
 
           {/* BRAND */}
           <div className="footer-brand">
-            <img src="/logo.png" alt="Bid Connectors" />
+            <Link to="/" className="navbar-brand bp-brand">
+              Bid  <span>Connectors</span>
+            </Link>
             <p>
-              BuildPulse helps contractors find, bid, and win more commercial projects with ease.
+              Bid Connectors is a one-stop shop to track, manage, and bid on top commercial and public construction projects in the USA. Our daily updated database is the best bet to find your next high-ROI project!
             </p>
           </div>
 
           {/* LINKS */}
-          <div className="footer-links">
+          <nav className="footer-links" aria-label="Footer navigation">
 
             <div>
-              <h6>Platform</h6>
-              <Link to="/project-finder">⋙ Project Finder</Link>
-              <Link to="/bid-manager">⋙ Bid Manager</Link>
-              <Link to="/estimating">⋙ Estimating</Link>
-              <Link to="/analytics">⋙ Analytics</Link>
-            </div>
-
-            <div>
-              <h6>Company</h6>
+              <h3>Company</h3>
+              <Link to="/">⋙ Home</Link>
               <Link to="/about">⋙ About</Link>
-              <Link to="/careers">⋙ Careers</Link>
-              <Link to="/blog">⋙ Blog</Link>
-              <Link to="/contact">⋙ Contact</Link>
+              <Link to="/contact-us">⋙ Contact Us</Link>
             </div>
 
             <div>
-              <h6>Resources</h6>
-              <Link to="/help">⋙ Help Center</Link>
-              <Link to="/api">⋙ API Docs</Link>
-              <Link to="/security">⋙ Security</Link>
-              <Link to="/privacy">⋙ Privacy</Link>
+              <h3>Solutions</h3>
+              <Link to="/solutions/subcontractors">⋙ Subcontractors</Link>
+              <Link to="/solutions/building-product-manufacturers">⋙ Building Product Manufacturers</Link>
             </div>
 
-          </div>
+            <div>
+              <h3>Support</h3>
+              <Link to="/faq">⋙ FAQ</Link>
+              <Link to="/pricing">⋙ Pricing</Link>
+            </div>
+
+          </nav>
 
         </div>
 
